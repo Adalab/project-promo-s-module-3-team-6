@@ -1,0 +1,89 @@
+.form--title {
+  color: #ffffff;
+  text-align: center;
+}
+
+.form--ask__info {
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.form--ask__info_subtitle {
+  padding-bottom: 10px;
+}
+
+.form--ask__info_line {
+  width: 100%;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0));
+}
+
+
+
+.form {
+  background-color: #302c42;
+  width: 40%;
+}
+
+.form--project,
+.form--autor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: none;
+}
+
+.input,
+.textarea {
+  background-color: #302c42;
+  border-color: white;
+  border-radius: 40px;
+  height: 42.72px;
+  color: #ffffff;
+  padding-left: 15px;
+  padding-top: 5px;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #ffffff;
+}
+
+.textarea {
+  height: 110px;
+}
+
+.buttons-img {
+  text-align: center;
+}
+
+.btn,
+.btn-large {
+  width: 160px;
+  margin-top: 10px;
+  color: white;
+  text-align: center;
+  border: none;
+
+  height: 43px;
+  background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
+  border-radius: 40px;
+}
+
+.btn-large {
+  width: 200px;
+  border: solid 2px white;
+}
+
+.info--project__technologies {
+  background-color: lightgray;
+  border-radius: 20px;
+  font-size: 14px;
+  padding: 10px;
+  width: 70%;
+}
