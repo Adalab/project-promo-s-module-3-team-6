@@ -78,14 +78,14 @@ function App() {
         <section className="form">
           <h2 className="form--title">Información</h2>
 
-          <section className="form--ask__info">
-            <p className="form--ask__info_subtitle">Cuéntanos sobre el proyecto</p>
-            <hr className="form--ask__info_line" />
+          <section className="form-ask-info">
+            <p className="form-ask-info__subtitle">Cuéntanos sobre el proyecto</p>
+            <hr className="form-ask-info__line" />
           </section>
 
-          <fieldset className="form--project">
+          <fieldset className="form-project">
             <input
-              className="input"
+              className="form-project__input"
               type="text"
               placeholder="Nombre del proyecto"
               name="name"
@@ -94,7 +94,7 @@ function App() {
               onChange={handleInputs}
             />
             <input
-              className="input"
+              className="form-project__input"
               type="text"
               name="slogan"
               id="slogan"
@@ -103,7 +103,7 @@ function App() {
               onChange={handleInputs}
             />
             <input
-              className="input"
+              className="form-project__input"
               type="text"
               name="repo"
               id="repo"
@@ -112,7 +112,7 @@ function App() {
               onChange={handleInputs}
             />
             <input
-              className="input"
+              className="form-project__input"
               type="text"
               placeholder="Demo"
               name="demo"
@@ -121,7 +121,7 @@ function App() {
               onChange={handleInputs}
             />
             <input
-              className="input"
+              className="form-project__input"
               type="text"
               placeholder="Tecnologías"
               name="technologies"
@@ -130,7 +130,7 @@ function App() {
               onChange={handleInputs}
             />
             <textarea
-              className="textarea"
+              className="form-project__textarea"
               type="text"
               placeholder="Descripción"
               name="desc"
