@@ -1,15 +1,36 @@
-  .container {
-    background-color: #302c42;
-    height: 100vh;
-    padding: 20px;
-  }
+.container {
+  background-color: #302c42;
+  height: 100vh;
+  padding: 35px 35px 51px 35px;
+}
 
-  .header {
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &--div {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
   }
 
-  .header .text {
-    color: white;
+  &--img {
+    margin: 11px 6px 19px 20px;
   }
+
+  &--img-adalab {
+    width: 180px;
+    margin: 0 0 40px 20px;
+  }
+
+  &--text {
+    color: $white-50;
+    font-family: $fontPoppins;
+    height: 23px;
+    width: 300px;
+    font-size: 30px;
+    font-weight: 300;
+    margin: 25px 20px 51px 7px;
+  }
+}
