@@ -12,8 +12,8 @@ function App() {
   const [desc, setSDesc] = useState('');
   const [autor, setAutor] = useState('');
   const [job, setJob] = useState('');
-  const [photo, setPhoto] = useState('');
-  const [image, setImage] = useState('');
+  // const [photo, setPhoto] = useState('');
+  // const [image, setImage] = useState('');
 
   const handleInputs = (ev) => {
     ev.preventDefault();
@@ -35,13 +35,13 @@ function App() {
       setAutor(inputValue)
     } else if (inputName === "job") {
       setJob(inputValue)
-    } else if (inputName === "photo") {
-      setPhoto(inputValue)
-    } else if (inputName === "image") {
-      setImage(inputValue)
+      // } else if (inputName === "photo") {
+      //   setPhoto(inputValue)
+      // } else if (inputName === "image") {
+      //   setImage(inputValue)
+      // }
     }
   }
-
 
   return (
     <div className="container">
@@ -140,9 +140,9 @@ function App() {
             ></textarea>
           </fieldset>
 
-          <section className="form--ask__info">
-            <p className="form--ask__info_subtitle">Cuéntanos sobre la autora</p>
-            <hr className="form--ask__info_line" />
+          <section className="form-ask-info">
+            <p className="form-ask-info__subtitle">Cuéntanos sobre la autora</p>
+            <hr className="form-ask-info__line" />
           </section>
 
           <fieldset className="form--autor">
@@ -166,11 +166,11 @@ function App() {
             />
           </fieldset>
 
-          <section className="buttons-img">
+          <section className="buttons-img1">
             <button className="btn">Subir foto de proyecto</button>
             <button className="btn">Subir foto de autora</button>
           </section>
-          <section className="buttons-img">
+          <section className="buttons-img2">
             <button className="btn-large" onClick="{handleClickCreateCard}">
               Crear Tarjeta
             </button>
@@ -178,12 +178,11 @@ function App() {
 
           <section className="card">
             <span className=""> La tarjeta ha sido creada: </span>
-            <a href="" className="" target="_blank" rel="noreferrer"> </a>
+            <a href="https://adalab.es/" className="" target="_blank" rel="noreferrer"> </a>
           </section>
         </section>
       </main>
     </div>
   )
 }
-
 export default App;
