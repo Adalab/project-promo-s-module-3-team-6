@@ -1,8 +1,8 @@
-@import "variables.scss";
-@import "mixins.scss";
-@import "header.scss";
-@import "preview.scss";
-@import "form.scss";
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'header.scss';
+@import 'preview.scss';
+@import 'form.scss';
 
 * {
   box-sizing: border-box;
@@ -13,7 +13,7 @@
 
 .main {
   display: flex;
-  padding-top: 50px;
+  padding-top: 20px;
   height: 80vh;
 }
 
@@ -23,12 +23,11 @@
   height: 30px;
   font-weight: bold;
 }
-  
+
 .btn-color-dark {
   background-color: black;
   color: white;
 }
-
 
 .card {
   color: white;
@@ -39,4 +38,3 @@
 .hidden {
   display: none;
 }
-  
