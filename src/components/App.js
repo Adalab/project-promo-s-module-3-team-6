@@ -59,8 +59,8 @@ function App() {
 
           <section className='preview--autor'>
             <section className='info--project'>
-              <p className='info--project__subtitle'>Personal Project Card</p>
-              <hr className='info--project__line' />
+              {/* <p className='info--project__subtitle'>Personal Project Card</p> */}
+              <hr className='info--project__line'>Personal Project Card</hr>
 
               <h2 className='info--project__title'>
                 {name || 'Elegant Workspace'}
