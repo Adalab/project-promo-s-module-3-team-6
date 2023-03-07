@@ -1,19 +1,19 @@
 .preview {
   width: 60%;
   padding: 20px;
-
 }
 .preview--image {
   object-fit: cover;
   width: 100%;
   height: 80%;
+  border-radius: 20px;
 }
 
 .preview--autor {
   background-color: white;
   color: #3e3e3e;
   width: 90%;
-  height: 50%;
+  // height: 50%;
   transform: translateY(-100px);
   margin: auto;
   border-radius: 20px;
@@ -21,46 +21,56 @@
   flex-direction: row-reverse;
   gap: 40px;
   padding: 30px;
-  overflow-y: scroll;
+  // overflow-y: scroll;
 }
 .info--autor {
   width: 40%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .info--autor__image {
   border-radius: 50%;
-  width: 80px;
-  height: 110px;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
 }
 
 .info--autor__job {
-  font-weight: bold;
-  color: black;
-  font-size: 14px;
+  // font-weight: bold;
+  color: $warmGrey;
+  font-size: 20px;
 }
 
 .info--autor__name {
-  font-size: 16px;
+  font-size: 25px;
+  font-weight: bold;
+  padding-top: 8px;
 }
 
 .info--project__line {
   width: 100%;
-  border: 0;
+  border: 1;
   height: 1px;
-  background-image: linear-gradient(to right,
-      rgba(255, 255, 255, 0),
-      rgba(1, 1, 1, 0.75),
-      rgba(255, 255, 255, 0));
+  transform: translateY(-12px);
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(1, 1, 1, 0.75),
+    rgba(255, 255, 255, 0)
+  );
 }
 .info--project__desc {
-  font-size: 12px;
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
 .info--project__slogan {
-  font-size: 14px;
-  margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 30px;
 }
 
 .info--project {
@@ -68,12 +78,39 @@
 }
 
 .info--project__subtitle {
-  font-size: 14px;
+  font-size: 20px;
   text-align: center;
 }
 
 .info--project__title {
-  font-size: 20px;
+  font-size: 40px;
   color: black;
   margin-bottom: 10px;
+  padding-top: 20px;
+}
+
+.info--project__technologies {
+  background-color: lightgray;
+  border-radius: 20px;
+  font-size: 14px;
+  padding: 10px;
+  width: 70%;
+}
+
+.info--project__technologies-text {
+  justify-content: center;
+  display: flex;
+  font-size: 16px;
+}
+
+.info--proyect__section {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.info--project__technologies-icon1 {
+  font-size: 40px;
 }

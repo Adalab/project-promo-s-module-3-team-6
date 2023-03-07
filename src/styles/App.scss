@@ -14,7 +14,7 @@
 .main {
   display: flex;
   padding-top: 50px;
-
+  height: 80vh;
 }
 
 .btn-color {
@@ -23,12 +23,11 @@
   height: 30px;
   font-weight: bold;
 }
-  
+
 .btn-color-dark {
   background-color: black;
   color: white;
 }
-
 
 .card {
   color: white;
@@ -39,4 +38,3 @@
 .hidden {
   display: none;
 }
-  
