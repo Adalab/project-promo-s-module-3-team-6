@@ -1,6 +1,6 @@
 .preview {
-  width: 60%;
-  padding: 20px;
+  //width: 60%;
+  // padding: 20px;
 }
 .preview--image {
   object-fit: cover;
@@ -13,14 +13,15 @@
   background-color: white;
   color: #3e3e3e;
   width: 90%;
-  // height: 50%;
-  transform: translateY(-100px);
+  height: 214px;
+  transform: translateY(-30px);
   margin: auto;
   border-radius: 20px;
   display: flex;
   flex-direction: row-reverse;
   gap: 40px;
   padding: 30px;
+  // height: 50%;
   // overflow-y: scroll;
 }
 .info--autor {
@@ -34,21 +35,21 @@
 
 .info--autor__image {
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  width: 74px;
+  height: 70px;
   margin-bottom: 20px;
 }
 
 .info--autor__job {
   // font-weight: bold;
   color: $warmGrey;
-  font-size: 20px;
+  font-size: 10px;
 }
 
 .info--autor__name {
-  font-size: 25px;
+  font-size: 14px;
   font-weight: bold;
-  padding-top: 8px;
+  //padding-top: 8px;
 }
 
 .info--project__line {
@@ -64,13 +65,13 @@
   );
 }
 .info--project__desc {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 8px;
+  //margin-bottom: 10px;
 }
 
 .info--project__slogan {
-  font-size: 20px;
-  margin-bottom: 30px;
+  font-size: 12px;
+  //margin-bottom: 30px;
 }
 
 .info--project {
@@ -78,39 +79,39 @@
 }
 
 .info--project__subtitle {
-  font-size: 20px;
+  font-size: 12px;
   text-align: center;
 }
 
 .info--project__title {
-  font-size: 40px;
+  font-size: 14px;
   color: black;
   margin-bottom: 10px;
-  padding-top: 20px;
+  //padding-top: 20px;
 }
 
 .info--project__technologies {
   background-color: lightgray;
   border-radius: 20px;
   font-size: 14px;
-  padding: 10px;
+  //padding: 10px;
   width: 70%;
 }
 
 .info--project__technologies-text {
   justify-content: center;
   display: flex;
-  font-size: 16px;
+  font-size: 10px;
 }
 
 .info--proyect__section {
   display: flex;
   flex-direction: row;
-  margin-top: 40px;
+  //margin-top: 40px;
   gap: 30px;
-  margin-bottom: 30px;
+  //margin-bottom: 30px;
 }
 
 .info--project__technologies-icon1 {
-  font-size: 40px;
+  font-size: 30px;
 }

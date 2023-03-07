@@ -13,8 +13,8 @@
 
 .main {
   display: flex;
+  flex-direction: column;
   padding-top: 50px;
-  height: 80vh;
 }
 
 .btn-color {

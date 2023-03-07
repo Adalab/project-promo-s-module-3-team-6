@@ -17,8 +17,11 @@ function App() {
   // const [photo, setPhoto] = useState('');
   // const [image, setImage] = useState('');
 
-  const handleInputs = (ev) => {
+  const handleSubmit = (ev) => {
     ev.preventDefault();
+  }
+
+  const handleInputs = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
     if (inputName === "name") {
@@ -96,7 +99,7 @@ function App() {
           </section>
         </section>
 
-        <section className='form'>
+        <form onSubmit={handleSubmit} className='form'>
           <h2 className='form--title'>Información</h2>
 
           <section className='form--ask__info'>
@@ -108,7 +111,9 @@ function App() {
 
           <fieldset className='form--project'>
             <input
-              className='form-project__input'
+              required
+              pattern="[A-Za-z]"
+              className='form--project__input'
               type='text'
               placeholder='Nombre del proyecto'
               name='name'
@@ -117,7 +122,8 @@ function App() {
               onChange={handleInputs}
             />
             <input
-              className='form-project__input'
+              required
+              className='form--project__input'
               type='text'
               name='slogan'
               id='slogan'
@@ -126,7 +132,8 @@ function App() {
               onChange={handleInputs}
             />
             <input
-              className="form-project__input"
+              required
+              className="form--project__input"
               type="text"
               name="repo"
               id="repo"
@@ -135,8 +142,9 @@ function App() {
               onChange={handleInputs}
             />
             <input
-              className="form-project__input"
-              type="text"
+              required
+              className="form--project__input"
+              type="url"
               placeholder="Demo"
               name="demo"
               id="demo"
@@ -144,7 +152,8 @@ function App() {
               onChange={handleInputs}
             />
             <input
-              className="form-project__input"
+              required
+              className="form--project__input"
               type="text"
               placeholder="Tecnologías"
               name="technologies"
@@ -153,7 +162,8 @@ function App() {
               onChange={handleInputs}
             />
             <textarea
-              className="form-project__textarea"
+              required
+              className="form--project__textarea"
               type="text"
               placeholder="Descripción"
               name="desc"
@@ -164,8 +174,8 @@ function App() {
           </fieldset>
 
           <section className="form-ask-info">
-            <p className="form-ask-info__subtitle">Cuéntanos sobre la autora</p>
-            <hr className="form-ask-info__line" />
+            <p className="form--ask__info_subtitle">Cuéntanos sobre la autora</p>
+            <hr className="form--ask__info_line" />
           </section>
 
           <fieldset className='form--autor'>
@@ -203,7 +213,7 @@ function App() {
             <span className=""> La tarjeta ha sido creada: </span>
             <a href="https://adalab.es/" className="" target="_blank" rel="noreferrer"> </a>
           </section>
-        </section>
+        </form>
       </main>
     </div>
   );

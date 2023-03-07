@@ -1,13 +1,12 @@
 .container {
   background-color: #302c42;
-  height: 100vh;
   padding: 35px 35px 51px 35px;
+  height: 100%;
 }
 
 .header {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
 
   &--div {
     display: flex;
@@ -16,21 +15,19 @@
   }
 
   &--img {
-    margin: 11px 6px 19px 20px;
+    width: 38px;
+    height: 31px;
   }
 
   &--img-adalab {
-    width: 180px;
-    margin: 0 0 40px 20px;
+    height: 46px;
   }
 
   &--text {
     color: $white-50;
     font-family: $fontPoppins;
     height: 23px;
-    width: 300px;
-    font-size: 30px;
+    font-size: 14px;
     font-weight: 300;
-    margin: 25px 20px 51px 7px;
   }
 }

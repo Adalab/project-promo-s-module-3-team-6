@@ -1,6 +1,8 @@
 .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #302c42;
-  width: 40%;
 
   .form--title {
     color: white;
@@ -10,19 +12,19 @@
     font-size: 30px;
   }
 
-  .form-ask-info {
+  .form--ask__info {
     padding: 20px;
     text-align: center;
     color: white;
 
-    &__subtitle {
+    &_subtitle {
       padding-bottom: 10px;
       font-family: "Montserrat", sans-serif;
       font-size: 15px;
       font-weight: 300;
     }
 
-    &__line {
+    &_line {
       width: 100%;
       border: 0;
       height: 1px;
@@ -35,7 +37,7 @@
     }
   }
 
-  .form-project {
+  .form--project {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -50,6 +52,7 @@
       font-size: 12px;
       padding-left: 15px;
       padding-top: 3px;
+      width: 18rem;
 
       &::placeholder {
         color: #ffffff;
@@ -92,25 +95,51 @@
   font-size: 12px;
   padding-left: 15px;
   padding-top: 3px;
-
+  width: 18rem;
 
   &::placeholder {
     color: #ffffff;
   }
 }
+
+.form-ask-info {
+  padding: 20px;
+  text-align: center;
+  color: white;
+
+  &_subtitle {
+    padding-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  &_line {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0)
+    );
+  }
+}
+
 .buttons-img1 {
   text-align: center;
   justify-content: center;
-  gap:10px;
-display: flex; 
+  gap: 10px;
+  display: flex;
 }
-.buttons-img2{
+.buttons-img2 {
   text-align: center;
 }
 
 .btn,
 .btn-large {
-  width: 160px;
+  width: 121px;
   margin-top: 10px;
   color: white;
   text-align: center;
