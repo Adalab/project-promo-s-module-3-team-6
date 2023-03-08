@@ -8,19 +8,34 @@
   display: flex;
   align-items: center;
 
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   &--div {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
 
-  &--img {
-    width: 38px;
-    height: 31px;
-  }
+    &--img {
+      width: 38px;
+      height: 31px;
+  
+      @include tablet {
+        margin: 11px 6px 19px 20px;
+      }
+    }
 
   &--img-adalab {
     height: 46px;
+
+    @include tablet {
+      height: 43px;
+      margin: 0 0 40px 20px;
+    }
+
   }
 
   &--text {
@@ -29,5 +44,13 @@
     height: 23px;
     font-size: 14px;
     font-weight: 300;
+
+    @include tablet {
+      width: 300px;
+      font-size: 30px;
+      margin: 25px 20px 51px 7px;
+    }
+
   }
 }
+
