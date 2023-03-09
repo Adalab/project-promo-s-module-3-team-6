@@ -1,6 +1,9 @@
 .preview {
   //width: 60%;
   // padding: 20px;
+  @include tablet{
+    width: 80%;
+  }
 }
 .preview--image {
   object-fit: cover;
@@ -24,6 +27,7 @@
   // height: 50%;
   // overflow-y: scroll;
 }
+
 .info--autor {
   width: 40%;
   text-align: center;
