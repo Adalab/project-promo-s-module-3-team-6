@@ -13,14 +13,14 @@
   background-color: white;
   color: #3e3e3e;
   width: 90%;
-  height: 214px;
+  // height: 214px;
   transform: translateY(-30px);
   margin: auto;
   border-radius: 20px;
   display: flex;
   flex-direction: row-reverse;
-  gap: 40px;
-  padding: 30px;
+
+  padding: 20px;
   // height: 50%;
   // overflow-y: scroll;
 }
@@ -30,14 +30,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .info--autor__image {
   border-radius: 50%;
   width: 74px;
   height: 70px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .info--autor__job {
@@ -51,22 +51,39 @@
   font-weight: bold;
   //padding-top: 8px;
 }
-
-.info--project__line {
-  width: 100%;
-  border: 1;
-  height: 1px;
-  transform: translateY(-12px);
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0),
-    rgba(1, 1, 1, 0.75),
-    rgba(255, 255, 255, 0)
-  );
+.wrap--title__preview{
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
 }
+.info--project__line1 {
+  // width: 34.2px;
+    height: 2px;
+    flex-grow: 0;
+    // margin: 2.7px 87.1px 3.6px 0;
+    background-image: linear-gradient(
+        to right,
+        rgba(163, 155, 155, 0),
+        rgba(117, 112, 112, 0.75),
+    rgba(8, 8, 8, 0.75),
+      );
+}
+.info--project__line2{
+    // width: 34.2px;
+      height: 2px;
+      flex-grow: 0;
+      // margin: 2.7px 0 3.6px 87.1px;
+      background-image: linear-gradient(to left,
+            rgba(163, 155, 155, 0),
+            rgba(117, 112, 112, 0.75),
+            rgba(8, 8, 8, 0.75),
+          );
+}
+
+
 .info--project__desc {
   font-size: 8px;
-  //margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 .info--project__slogan {
@@ -79,23 +96,21 @@
 }
 
 .info--project__subtitle {
-  font-size: 12px;
+  font-size: 8px;
   text-align: center;
 }
 
 .info--project__title {
   font-size: 14px;
   color: black;
-  margin-bottom: 10px;
+  margin-top: 10px;
   //padding-top: 20px;
 }
 
 .info--project__technologies {
-  background-color: lightgray;
-  border-radius: 20px;
   font-size: 14px;
   //padding: 10px;
-  width: 70%;
+  
 }
 
 .info--project__technologies-text {
@@ -107,11 +122,11 @@
 .info--proyect__section {
   display: flex;
   flex-direction: row;
-  //margin-top: 40px;
-  gap: 30px;
-  //margin-bottom: 30px;
+  align-items: center;
+  gap: 10px;
+
 }
 
 .info--project__technologies-icon1 {
-  font-size: 30px;
+  font-size: 12px;
 }

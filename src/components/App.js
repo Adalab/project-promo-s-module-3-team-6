@@ -1,19 +1,33 @@
 import { useState } from 'react';
 import '../styles/App.scss';
 import avatar from '../images/user.png';
-import icon1 from '../images/icon1.png';
+import icon1 from '../images/icon.png';
 import adalab from '../images/logo-adalab.png';
 import cover from '../images/cover.jpeg';
 
 function App() {
-  const [name, setName] = useState('');
-  const [slogan, setSlogan] = useState('');
-  const [technologies, setTechnologies] = useState('');
-  const [repo, setRepo] = useState('');
-  const [demo, setDemo] = useState('');
-  const [desc, setSDesc] = useState('');
-  const [autor, setAutor] = useState('');
-  const [job, setJob] = useState('');
+
+  const [data, setData] = useState({
+    name: '',
+    slogan: '',
+    technologies: '',
+    repo: '',
+    demo: '',
+    desc: '',
+    autor: '',
+    job: '',
+    photo: '',
+    image: '',
+  }
+  );
+  // const [name, setName] = useState('');
+  // const [slogan, setSlogan] = useState('');
+  // const [technologies, setTechnologies] = useState('');
+  // const [repo, setRepo] = useState('');
+  // const [demo, setDemo] = useState('');
+  // const [desc, setSDesc] = useState('');
+  // const [autor, setAutor] = useState('');
+  // const [job, setJob] = useState('');
   // const [photo, setPhoto] = useState('');
   // const [image, setImage] = useState('');
 
@@ -24,28 +38,31 @@ function App() {
   const handleInputs = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
-    if (inputName === "name") {
-      setName(inputValue)
-    } else if (inputName === "slogan") {
-      setSlogan(inputValue)
-    } else if (inputName === "technologies") {
-      setTechnologies(inputValue)
-    } else if (inputName === "repo") {
-      setRepo(inputValue)
-    } else if (inputName === "demo") {
-      setDemo(inputValue)
-    } else if (inputName === "desc") {
-      setSDesc(inputValue)
-    } else if (inputName === "autor") {
-      setAutor(inputValue)
-    } else if (inputName === "job") {
-      setJob(inputValue)
-      // } else if (inputName === "photo") {
-      //   setPhoto(inputValue)
-      // } else if (inputName === "image") {
-      //   setImage(inputValue)
-      // }
-    }
+
+    setData({...data,[inputName]:inputValue}) // cogermos valor que hay dentro de inputName y lo definimos con inputValue
+    
+    // if (inputName === "name") {
+    //   setData({...data, name: inputValue})
+    // } else if (inputName === "slogan") {
+    //  setData({...data, slogan: inputValue})
+    // } else if (inputName === "technologies") {
+    //   setData({...data, technologies: inputValue})
+    // } else if (inputName === "repo") {
+    //  setData({...data, repo: inputValue})
+    // } else if (inputName === "demo") {
+    //   setData({...data, demo: inputValue})
+    // } else if (inputName === "desc") {
+    //   setData({...data, desc: inputValue})
+    // } else if (inputName === "autor") {
+    //   setData({...data, autor: inputValue})
+    // } else if (inputName === "job") {
+    //   setData({...data, name: inputValue})
+    //   // } else if (inputName === "photo") {
+    //   //   setPhoto(inputValue)
+    //   // } else if (inputName === "image") {
+    //   //   setImage(inputValue)
+    //   // }
+    // }
   }
 
   return (
@@ -63,23 +80,26 @@ function App() {
 
           <section className='preview--autor'>
             <section className='info--project'>
-              <p className='info--project__subtitle'>Personal Project Card</p>
-              <hr className='info--project__line' />
+              <div className='wrap--title__preview'>
+                <div className='info--project__line1'></div>
+                <p className='info--project__subtitle'>Personal Project Card</p>
+                <div className='info--project__line2'></div>
+              </div>
 
               <h2 className='info--project__title'>
-                {name || 'Elegant Workspace'}
+                {data.name || 'Elegant Workspace'}
               </h2>
               <p className='info--project__slogan'>
-                {slogan || 'Diseños Exclusivos'}
+                {data.slogan || 'Diseños Exclusivos'}
               </p>
               <p className='info--project__desc'>
-                {desc ||
+                {data.desc ||
                   'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, delectus? Voluptates at hic aliquam porro ad suscipitharum laboriosam saepe earum doloribus aperiam, ullam culpa accusantium placeat odit corrupti ipsum!'}
               </p>
               <section className='info--proyect__section'>
                 <div className='info--project__technologies'>
                   <p className='info--project__technologies-text'>
-                    {technologies || 'React JS, MongoDB'}
+                    {data.technologies || 'React JS, MongoDB'}
                   </p>
                 </div>
                 <i className='fa-solid fa-globe info--project__technologies-icon1'></i>
@@ -90,10 +110,10 @@ function App() {
             <section className='info--autor'>
               <img className='info--autor__image' src={avatar} alt='' />
               <p className='info--autor__job'>
-                {job || 'Full Stack Developer'}
+                {data.job || 'Full Stack Developer'}
               </p>
               <p className='info--autor__name'>
-                {autor || 'Emmelie Björklund'}
+                {data.autor || 'Emmelie Björklund'}
               </p>
             </section>
           </section>
@@ -118,7 +138,7 @@ function App() {
               placeholder='Nombre del proyecto'
               name='name'
               id='name'
-              value={name}
+              value={data.name}
               onChange={handleInputs}
             />
             <input
@@ -128,7 +148,7 @@ function App() {
               name='slogan'
               id='slogan'
               placeholder='Slogan'
-              value={slogan}
+              value={data.slogan}
               onChange={handleInputs}
             />
             <input
@@ -138,7 +158,7 @@ function App() {
               name="repo"
               id="repo"
               placeholder="Repo"
-              value={repo}
+              value={data.repo}
               onChange={handleInputs}
             />
             <input
@@ -148,7 +168,7 @@ function App() {
               placeholder="Demo"
               name="demo"
               id="demo"
-              value={demo}
+              value={data.demo}
               onChange={handleInputs}
             />
             <input
@@ -158,7 +178,7 @@ function App() {
               placeholder="Tecnologías"
               name="technologies"
               id="technologies"
-              value={technologies}
+              value={data.technologies}
               onChange={handleInputs}
             />
             <textarea
@@ -168,7 +188,7 @@ function App() {
               placeholder="Descripción"
               name="desc"
               id="desc"
-              value={desc}
+              value={data.desc}
               onChange={handleInputs}
             ></textarea>
           </fieldset>
@@ -185,7 +205,7 @@ function App() {
               placeholder='Nombre'
               name='autor'
               id='autor'
-              value={autor}
+              value={data.autor}
               onChange={handleInputs}
             />
             <input
@@ -194,7 +214,7 @@ function App() {
               placeholder='Trabajo'
               name='job'
               id='job'
-              value={job}
+              value={data.job}
               onChange={handleInputs}
             />
           </fieldset>

@@ -2,7 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #302c42;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border: solid 1px rgba(0, 0, 0, 0);
+    background-image: radial-gradient(circle at 50% 50%, #403a5f, #211e2e 92%);
+  padding: 15px;
 
   .form--title {
     color: white;
@@ -42,6 +45,7 @@
     flex-direction: column;
     gap: 10px;
     border: none;
+    width: 100%;
 
     &__input {
       background-color: #302c42;
@@ -52,7 +56,7 @@
       font-size: 12px;
       padding-left: 15px;
       padding-top: 3px;
-      width: 18rem;
+      
 
       &::placeholder {
         color: #ffffff;
@@ -85,6 +89,7 @@
   flex-direction: column;
   gap: 10px;
   border: none;
+  width: 100%;
 }
 .input {
   background-color: #302c42;
@@ -95,8 +100,7 @@
   font-size: 12px;
   padding-left: 15px;
   padding-top: 3px;
-  width: 18rem;
-
+  
   &::placeholder {
     color: #ffffff;
   }
@@ -144,7 +148,7 @@
   color: white;
   text-align: center;
   border: none;
-
+  padding: 0 5px;
   height: 43px;
   background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
   border-radius: 40px;
