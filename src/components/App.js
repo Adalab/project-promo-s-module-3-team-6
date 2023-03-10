@@ -4,10 +4,12 @@ import avatar from '../images/user.png';
 import icon1 from '../images/icon.png';
 import adalab from '../images/logo-adalab.png';
 import cover from '../images/cover.jpeg';
+import dataApi from '../services/api';
 
 function App() {
 
   const [data, setData] = useState({
+    color: 'dark',
     name: '',
     slogan: '',
     technologies: '',
@@ -16,21 +18,20 @@ function App() {
     desc: '',
     autor: '',
     job: '',
-    photo: '',
-    image: '',
+    photo: avatar,
+    image: cover,
   }
   );
-  // const [name, setName] = useState('');
-  // const [slogan, setSlogan] = useState('');
-  // const [technologies, setTechnologies] = useState('');
-  // const [repo, setRepo] = useState('');
-  // const [demo, setDemo] = useState('');
-  // const [desc, setSDesc] = useState('');
-  // const [autor, setAutor] = useState('');
-  // const [job, setJob] = useState('');
-  // const [photo, setPhoto] = useState('');
-  // const [image, setImage] = useState('');
+  const [url, setUrl] = useState('');
 
+  const handleClickCreateCard = () =>{
+    dataApi(data)
+    .then(info => {
+      setUrl(info.cardURL)
+      console.log(info)
+
+    })
+   }
   const handleSubmit = (ev) => {
     ev.preventDefault();
   }
@@ -40,29 +41,6 @@ function App() {
     const inputName = ev.target.name;
 
     setData({...data,[inputName]:inputValue}) // cogermos valor que hay dentro de inputName y lo definimos con inputValue
-    
-    // if (inputName === "name") {
-    //   setData({...data, name: inputValue})
-    // } else if (inputName === "slogan") {
-    //  setData({...data, slogan: inputValue})
-    // } else if (inputName === "technologies") {
-    //   setData({...data, technologies: inputValue})
-    // } else if (inputName === "repo") {
-    //  setData({...data, repo: inputValue})
-    // } else if (inputName === "demo") {
-    //   setData({...data, demo: inputValue})
-    // } else if (inputName === "desc") {
-    //   setData({...data, desc: inputValue})
-    // } else if (inputName === "autor") {
-    //   setData({...data, autor: inputValue})
-    // } else if (inputName === "job") {
-    //   setData({...data, name: inputValue})
-    //   // } else if (inputName === "photo") {
-    //   //   setPhoto(inputValue)
-    //   // } else if (inputName === "image") {
-    //   //   setImage(inputValue)
-    //   // }
-    // }
   }
 
   return (
@@ -132,7 +110,7 @@ function App() {
           <fieldset className='form--project'>
             <input
               required
-              pattern="[A-Za-z]"
+              // pattern="^[A-Za-z]$"
               className='form--project__input'
               type='text'
               placeholder='Nombre del proyecto'
@@ -164,7 +142,7 @@ function App() {
             <input
               required
               className="form--project__input"
-              type="url"
+              type="text"
               placeholder="Demo"
               name="demo"
               id="demo"
@@ -224,14 +202,14 @@ function App() {
             <button className="btn">Subir foto de autora</button>
           </section>
           <section className="buttons-img2">
-            <button className="btn-large" onClick="{handleClickCreateCard}">
+            <button className="btn-large" onClick={handleClickCreateCard}>
               Crear Tarjeta
             </button>
           </section>
 
           <section className="card">
             <span className=""> La tarjeta ha sido creada: </span>
-            <a href="https://adalab.es/" className="" target="_blank" rel="noreferrer"> </a>
+            <a href={url} className="" target="_blank" rel="noreferrer"> </a>
           </section>
         </form>
       </main>
