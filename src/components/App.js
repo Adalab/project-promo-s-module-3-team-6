@@ -9,7 +9,7 @@ import dataApi from '../services/api';
 function App() {
 
   const [data, setData] = useState({
-    color: 'dark',
+    //color: 'dark',
     name: '',
     slogan: '',
     technologies: '',
@@ -24,14 +24,12 @@ function App() {
   );
   const [url, setUrl] = useState('');
 
-  const handleClickCreateCard = () =>{
+  const handleClickCreateCard = () => {
     dataApi(data)
-    .then(info => {
-      setUrl(info.cardURL)
-      console.log(info)
-
-    })
-   }
+      .then(info => {
+        setUrl(info.cardURL)
+      })
+  }
   const handleSubmit = (ev) => {
     ev.preventDefault();
   }
@@ -40,7 +38,7 @@ function App() {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
 
-    setData({...data,[inputName]:inputValue}) // cogermos valor que hay dentro de inputName y lo definimos con inputValue
+    setData({ ...data, [inputName]: inputValue }) // cogemos valor que hay dentro de inputName y lo definimos con inputValue
   }
 
   return (
