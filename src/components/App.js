@@ -57,14 +57,14 @@ const regex =  /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.
       if(inputValue === ''){
         setErrorDemo('')
       }else if (!regex.test(inputValue)) {
-        setErrorDemo('Introduce un enlace válido, Ej: https://...')
+        setErrorDemo('*Introduce un enlace válido, Ej: https://...')
       } 
     }
     if(inputName === 'repo'){
       if(inputValue === ''){
         setErrorRepo('')
       }else if (!regex.test(inputValue)) {
-        setErrorRepo('Introduce un enlace válido, Ej: https://...')
+        setErrorRepo('*Introduce un enlace válido, Ej: https://...')
       } 
     }
   }
@@ -169,7 +169,7 @@ const regex =  /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.
               onChange={handleInputs}
               // pattern='^(http(s):\/\/.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$'
             />
-            <span>{errorRepo}</span>
+            <span className='span--error'>{errorRepo}</span>
             <input
               required
               className="form--project__input"
@@ -181,7 +181,7 @@ const regex =  /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.
               type="url"
               // pattern='^(http(s):\/\/.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$'
             />
-            <span>{errorDemo}</span>
+            <span className='span--error'>{errorDemo}</span>
             <input
               required
               className="form--project__input"
@@ -241,10 +241,9 @@ const regex =  /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.
             </input>
           </section>
 
-          <section className="card">
-            <span className=""> {errorMsjBtn} </span>
-            <p></p>
-            <a href={url} className="" target="_blank" rel="noreferrer"> {url}</a>
+          <section >
+            <p className="card"> {errorMsjBtn} </p>
+            <a className="error--msj" href={url}  target="_blank" rel="noreferrer"> {url}</a>
           </section>
         </form>
       </main>

@@ -11,8 +11,9 @@
    width: 50%;
   }
   @include desktop {
-       width: 40%;
-       height: 80%;
+       width: 50%;
+      
+      
      }
 
 
@@ -21,7 +22,7 @@
     text-align: center;
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .form--ask__info {
@@ -77,13 +78,13 @@
       background-color: #302c42;
       border-color: white;
       border-radius: 40px;
-      height: 42.72px;
+      
       color: #ffffff;
       padding-left: 1rem;
       padding-right: 1rem;
       padding-bottom: 1rem;
       padding-top: 1rem;
-      height: 8rem;
+    
       overflow-y: hidden;
 
       &::placeholder {
@@ -167,7 +168,21 @@
   width: 200px;
   border: solid 2px white;
 }
+.error--msj{
+  text-decoration: none;
+  color: rgb(95, 105, 196);
+  font-size: 12px;
+  @include desktop{
+    font-size: 14px;
+  }
+}
 
+.span--error{
+ color: rgb(255, 40, 40);
+ font-size: 13px;
+ margin-left: 15px;
+ font-family:$fontFamily;
+}
 /*  .info--project__technologies {
     background-color: lightgray;
     border-radius: 20px;
