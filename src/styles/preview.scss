@@ -57,7 +57,7 @@
 }
 .wrap--title__preview{
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
 }
 .info--project__line1 {
@@ -127,10 +127,15 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
 
 }
 
 .info--project__technologies-icon1 {
   font-size: 12px;
+}
+.wrap--icon{
+  display: flex;
+  gap:10px;
 }

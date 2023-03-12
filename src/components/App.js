@@ -23,22 +23,50 @@ function App() {
   }
   );
   const [url, setUrl] = useState('');
+  const [errorMsjBtn, setErrorMsjBtn] = useState('');
+  const [errorDemo, setErrorDemo] = useState('');
+  const [errorRepo, setErrorRepo] = useState('');
+
+   
+
 
   const handleClickCreateCard = () => {
     dataApi(data)
-      .then(info => {
-        setUrl(info.cardURL)
-      })
+    .then((data) => {
+      if (!data.success) {
+        setErrorMsjBtn("*Debes completar todos los campos");
+      } else {
+        setErrorMsjBtn("La tarjeta ha sido creada:")
+        setUrl(data.cardURL)
+      }
+    })  
   }
+
   const handleSubmit = (ev) => {
     ev.preventDefault();
   }
+const regex =  /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/ ; 
 
   const handleInputs = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
-
+  
     setData({ ...data, [inputName]: inputValue }) // cogemos valor que hay dentro de inputName y lo definimos con inputValue
+
+    if(inputName === 'demo'){
+      if(inputValue === ''){
+        setErrorDemo('')
+      }else if (!regex.test(inputValue)) {
+        setErrorDemo('Introduce un enlace válido, Ej: https://...')
+      } 
+    }
+    if(inputName === 'repo'){
+      if(inputValue === ''){
+        setErrorRepo('')
+      }else if (!regex.test(inputValue)) {
+        setErrorRepo('Introduce un enlace válido, Ej: https://...')
+      } 
+    }
   }
 
   return (
@@ -78,8 +106,10 @@ function App() {
                     {data.technologies || 'React JS, MongoDB'}
                   </p>
                 </div>
-                <i className='fa-solid fa-globe info--project__technologies-icon1'></i>
-                <i className='fa-brands fa-github info--project__technologies-icon1'></i>
+                <div className='wrap--icon'>
+                  <a href={data.demo}  target="_blank" rel="noreferrer"><i className='fa-solid fa-globe info--project__technologies-icon1'></i></a>
+                                 <a href={data.repo} target="_blank" rel="noreferrer"><i className='fa-brands fa-github info--project__technologies-icon1'></i></a>
+                </div>
               </section>
             </section>
 
@@ -108,7 +138,7 @@ function App() {
           <fieldset className='form--project'>
             <input
               required
-              // pattern="^[A-Za-z]$"
+              maxLength='20'
               className='form--project__input'
               type='text'
               placeholder='Nombre del proyecto'
@@ -119,6 +149,7 @@ function App() {
             />
             <input
               required
+              maxLength='30'
               className='form--project__input'
               type='text'
               name='slogan'
@@ -130,23 +161,27 @@ function App() {
             <input
               required
               className="form--project__input"
-              type="text"
+              type="url"
               name="repo"
               id="repo"
               placeholder="Repo"
               value={data.repo}
               onChange={handleInputs}
+              // pattern='^(http(s):\/\/.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$'
             />
+            <span>{errorRepo}</span>
             <input
               required
               className="form--project__input"
-              type="text"
               placeholder="Demo"
               name="demo"
               id="demo"
               value={data.demo}
               onChange={handleInputs}
+              type="url"
+              // pattern='^(http(s):\/\/.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$'
             />
+            <span>{errorDemo}</span>
             <input
               required
               className="form--project__input"
@@ -159,6 +194,7 @@ function App() {
             />
             <textarea
               required
+              maxLength='150'
               className="form--project__textarea"
               type="text"
               placeholder="Descripción"
@@ -200,14 +236,15 @@ function App() {
             <button className="btn">Subir foto de autora</button>
           </section>
           <section className="buttons-img2">
-            <button className="btn-large" onClick={handleClickCreateCard}>
-              Crear Tarjeta
-            </button>
+            <input type="submit" className="btn-large" onClick={handleClickCreateCard} value='Crear Tarjeta'>
+              
+            </input>
           </section>
 
           <section className="card">
-            <span className=""> La tarjeta ha sido creada: </span>
-            <a href={url} className="" target="_blank" rel="noreferrer"> </a>
+            <span className=""> {errorMsjBtn} </span>
+            <p></p>
+            <a href={url} className="" target="_blank" rel="noreferrer"> {url}</a>
           </section>
         </form>
       </main>
