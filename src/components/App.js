@@ -194,7 +194,7 @@ const regex =  /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.
             />
             <textarea
               required
-              maxLength='150'
+              maxLength='200'
               className="form--project__textarea"
               type="text"
               placeholder="Descripción"

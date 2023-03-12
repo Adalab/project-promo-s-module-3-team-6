@@ -8,13 +8,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 10px;
   &--div {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
   @include tablet{
-    padding: 20px 20px 0 20px ;
+    padding: 10px 20px 0 20px ;
   }
 
   &--img {
