@@ -28,10 +28,10 @@
   gap: 5px;
   padding: 20px;
 @include tablet {
-  transform: translateY(-50px);
+  transform: translateY(-70px);
   }
     @include desktop {
-      transform: translateY(-50px);
+      transform: translateY(-120px);
       max-width: 500px;
     }
 

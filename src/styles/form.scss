@@ -2,20 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     border: solid 1px rgba(0, 0, 0, 0);
     background-image: radial-gradient(circle at 50% 50%, #403a5f, #211e2e 92%);
-  padding: 15px;
+  padding: 15px 20px;
   @include tablet{
    width: 50%;
   }
   @include desktop {
        width: 50%;
-      
-      
+       height: 90%;
      }
-
 
   .form--title {
     color: white;

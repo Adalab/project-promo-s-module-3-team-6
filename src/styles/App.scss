@@ -10,17 +10,27 @@
   padding: 0;
   font-family: $fontFamily;
 }
+.container {
+  background-color: #302c42;
+  padding: 15px 15px;
+ height: 100%;
+
+  @include desktop {
+    padding: 15px 25px; 
+   
+  }
+}
 
 .main {
   display: flex;
   flex-direction: column;
   padding-top: 30px;
+  height: 100%;
 
 
   @include tablet{
     padding: 10px 0 20px 0;
     flex-direction: row;
-   
     gap: 20px;
     
   }
