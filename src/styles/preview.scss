@@ -9,9 +9,7 @@
   width: 100%;
   height: 80%;
   border-radius: 20px;
-  // @include desktop {
-  //   max-height:650px;
-  //   }
+
 }
 
 .preview--autor {
@@ -28,10 +26,10 @@
   gap: 5px;
   padding: 20px;
 @include tablet {
-  transform: translateY(-70px);
+  transform: translateY(-90px);
   }
     @include desktop {
-      transform: translateY(-120px);
+      transform: translateY(-160px);
       max-width: 500px;
     }
 
