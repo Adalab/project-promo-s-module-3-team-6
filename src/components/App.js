@@ -31,6 +31,29 @@ function App() {
   const [errorDemo, setErrorDemo] = useState('');
   const [errorRepo, setErrorRepo] = useState('');
 
+  const regex =  /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/ ; 
+
+  const handleInputs = (ev) => {
+    const inputValue = ev.target.value;
+    const inputName = ev.target.name;
+  
+    setData({ ...data, [inputName]: inputValue }) // cogemos valor que hay dentro de inputName y lo definimos con inputValue
+
+    if(inputName === 'demo'){
+      if(inputValue === ''){
+        setErrorDemo('')
+      }else if (!regex.test(inputValue)) {
+        setErrorDemo('*Introduce un enlace válido, Ej: https://...')
+      } 
+    }
+    if(inputName === 'repo'){
+      if(inputValue === ''){
+        setErrorRepo('')
+      }else if (!regex.test(inputValue)) {
+        setErrorRepo('*Introduce un enlace válido, Ej: https://...')
+      } 
+    }
+  }
    
 
 
@@ -50,17 +73,21 @@ function App() {
     ev.preventDefault();
   }
 
-
-  
-
   return (
     <div className='container'>
       <Header icon1={icon1} adalab={adalab}></Header>
       <main className='main'>
         <Preview cover={cover} data={data} avatar={avatar}></Preview>
-        <Form></Form>
+        <Form
+        handleSubmit={handleSubmit}
+        data={data}
+        handleInputs={handleInputs}
+        errorRepo={errorRepo}
+        handleClickCreateCard= {handleClickCreateCard}
+        errorMsjBtn={errorMsjBtn}
+        url={url}
+        ></Form>
 
-    
       </main>
     </div>
   );
