@@ -2,7 +2,7 @@ import Button from "./Button"
 import Input from "./Input"
 import TextArea from "./TextArea"
 
-const Form = ({ handleSubmit, data, handleInputs, errorRepo, handleClickCreateCard, errorMsjBtn, url }) => {
+const Form = ({ handleSubmit, data, handleInputs, errorRepo, errorDemo, handleClickCreateCard, errorMsjBtn, url }) => {
   return (
     <form onSubmit={handleSubmit} className='form'>
       <h2 className='form--title'>Información</h2>
@@ -44,7 +44,7 @@ const Form = ({ handleSubmit, data, handleInputs, errorRepo, handleClickCreateCa
           value={data.demo}
           handleInputs={handleInputs}
         />
-        <span className='span--error'>{errorRepo}</span>
+        <span className='span--error'>{errorDemo}</span>
 
         <Input
           placeholder={'Tecnologías'}

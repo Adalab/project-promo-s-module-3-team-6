@@ -1,4 +1,8 @@
 const Input = ({ nameId, placeholder, value, maxLenght, handleInputs }) => {
+
+  const handleChangeInputs = (ev) => {
+    handleInputs(ev.target.value, ev.target.name)
+  }
   return (
     <input
       required
@@ -9,7 +13,7 @@ const Input = ({ nameId, placeholder, value, maxLenght, handleInputs }) => {
       name={nameId}
       id={nameId}
       value={value}
-      onChange={handleInputs}
+      onChange={handleChangeInputs}
     />
   )
 }

@@ -31,42 +31,37 @@ function App() {
   const [errorDemo, setErrorDemo] = useState('');
   const [errorRepo, setErrorRepo] = useState('');
 
-  const regex =  /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/ ; 
+  const regex = /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
 
-  const handleInputs = (ev) => {
-    const inputValue = ev.target.value;
-    const inputName = ev.target.name;
-  
-    setData({ ...data, [inputName]: inputValue }) // cogemos valor que hay dentro de inputName y lo definimos con inputValue
+  const handleInputs = (inputValue, inputName) => {
+    setData({ ...data, [inputName]: inputValue })
 
-    if(inputName === 'demo'){
-      if(inputValue === ''){
+    if (inputName === 'demo') {
+      if (inputValue === '') {
         setErrorDemo('')
-      }else if (!regex.test(inputValue)) {
+      } else if (!regex.test(inputValue)) {
         setErrorDemo('*Introduce un enlace válido, Ej: https://...')
-      } 
+      }
     }
-    if(inputName === 'repo'){
-      if(inputValue === ''){
+    if (inputName === 'repo') {
+      if (inputValue === '') {
         setErrorRepo('')
-      }else if (!regex.test(inputValue)) {
+      } else if (!regex.test(inputValue)) {
         setErrorRepo('*Introduce un enlace válido, Ej: https://...')
-      } 
+      }
     }
   }
-   
-
 
   const handleClickCreateCard = () => {
     dataApi(data)
-    .then((data) => {
-      if (!data.success) {
-        setErrorMsjBtn("*Debes completar todos los campos");
-      } else {
-        setErrorMsjBtn("La tarjeta ha sido creada:")
-        setUrl(data.cardURL)
-      }
-    })  
+      .then((data) => {
+        if (!data.success) {
+          setErrorMsjBtn("*Debes completar todos los campos");
+        } else {
+          setErrorMsjBtn("La tarjeta ha sido creada:")
+          setUrl(data.cardURL)
+        }
+      })
   }
 
   const handleSubmit = (ev) => {
@@ -75,17 +70,18 @@ function App() {
 
   return (
     <div className='container'>
-      <Header icon1={icon1} adalab={adalab}/>
+      <Header icon1={icon1} adalab={adalab} />
       <main className='main'>
-        <Preview cover={cover} data={data} avatar={avatar}/>
+        <Preview cover={cover} data={data} avatar={avatar} />
         <Form
-        handleSubmit={handleSubmit}
-        data={data}
-        handleInputs={handleInputs}
-        errorRepo={errorRepo}
-        handleClickCreateCard= {handleClickCreateCard}
-        errorMsjBtn={errorMsjBtn}
-        url={url}
+          handleSubmit={handleSubmit}
+          data={data}
+          handleInputs={handleInputs}
+          errorRepo={errorRepo}
+          errorDemo={errorDemo}
+          handleClickCreateCard={handleClickCreateCard}
+          errorMsjBtn={errorMsjBtn}
+          url={url}
         />
 
       </main>
