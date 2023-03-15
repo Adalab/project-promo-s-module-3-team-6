@@ -75,9 +75,9 @@ function App() {
 
   return (
     <div className='container'>
-      <Header icon1={icon1} adalab={adalab}></Header>
+      <Header icon1={icon1} adalab={adalab}/>
       <main className='main'>
-        <Preview cover={cover} data={data} avatar={avatar}></Preview>
+        <Preview cover={cover} data={data} avatar={avatar}/>
         <Form
         handleSubmit={handleSubmit}
         data={data}
@@ -86,7 +86,7 @@ function App() {
         handleClickCreateCard= {handleClickCreateCard}
         errorMsjBtn={errorMsjBtn}
         url={url}
-        ></Form>
+        />
 
       </main>
     </div>

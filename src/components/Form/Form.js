@@ -19,44 +19,44 @@ const Form = ({ handleSubmit, data, handleInputs, errorRepo, handleClickCreateCa
           placeholder={'Nombre del proyecto'}
           nameId={'name'}
           value={data.name}
-          handleInputs={handleInputs}>
-        </Input>
+          handleInputs={handleInputs}
+        />
 
         <Input
           maxLenght={'30'}
           placeholder={'Slogan'}
           nameId={'slogan'}
           value={data.slogan}
-          handleInputs={handleInputs}>
-        </Input>
+          handleInputs={handleInputs}
+        />
 
         <Input
           placeholder={'Repo'}
           nameId={'repo'}
           value={data.repo}
-          handleInputs={handleInputs}>
-        </Input>
+          handleInputs={handleInputs}
+        />
         <span className='span--error'>{errorRepo}</span>
 
         <Input
           placeholder={'Demo'}
           nameId={'demo'}
           value={data.demo}
-          handleInputs={handleInputs}>
-        </Input>
+          handleInputs={handleInputs}
+        />
         <span className='span--error'>{errorRepo}</span>
 
         <Input
           placeholder={'Tecnologías'}
           nameId={'technologies'}
           value={data.technologies}
-          handleInputs={handleInputs}>
-        </Input>
+          handleInputs={handleInputs}
+        />
 
         <TextArea
           data={data}
           handleInputs={handleInputs}
-        ></TextArea>
+        />
 
       </fieldset>
 
@@ -70,15 +70,15 @@ const Form = ({ handleSubmit, data, handleInputs, errorRepo, handleClickCreateCa
           placeholder={'Nombre'}
           nameId={'autor'}
           value={data.autor}
-          handleInputs={handleInputs}>
-        </Input>
+          handleInputs={handleInputs}
+        />
 
         <Input
           placeholder={'Trabajo'}
           nameId={'job'}
           value={data.job}
-          handleInputs={handleInputs}>
-        </Input>
+          handleInputs={handleInputs}
+        />
 
       </fieldset>
 
@@ -89,7 +89,7 @@ const Form = ({ handleSubmit, data, handleInputs, errorRepo, handleClickCreateCa
       <section className="buttons-img2">
         <Button
           handleClickCreateCard={handleClickCreateCard}
-        ></Button>
+        />
       </section>
 
       <section >
