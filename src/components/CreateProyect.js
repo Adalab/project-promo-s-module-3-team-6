@@ -1,14 +1,12 @@
 import { useState } from 'react';
-// import user from '../images/user.png';
-// import cover from '../images/cover.jpeg';
 import dataApi from '../services/api';
 import Preview from './Preview';
 import Form from './Form/Form';
 import ls from '../services/localStorage'
 
 const CreateProyect = () => {
-  const [avatar, setAvatar] = useState('');
-  const [cover, setCover] = useState('');
+
+  //VARIABLES
   const [data, setData] = useState(ls.get('card', {
     name: '',
     slogan: '',
@@ -18,29 +16,28 @@ const CreateProyect = () => {
     desc: '',
     autor: '',
     job: '',
-    photo: avatar,
-    image: cover,
+    photo: '',
+    image: '',
   }
   ));
   const [url, setUrl] = useState('');
   const [errorMsjBtn, setErrorMsjBtn] = useState('');
   const [errorDemo, setErrorDemo] = useState('');
   const [errorRepo, setErrorRepo] = useState('');
-
+  const regex = /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
 
   const updateAvatar = (avatar) => {
-    setAvatar(avatar);
+    setData({ ...data, photo: avatar });
+    ls.set('card', data)
   };
 
-  const updateCover = (cover) => {
-    setCover(cover);
+  const updateCover = (avatar) => {
+    setData({ ...data, image: avatar });
+    ls.set('card', data)
   };
-
-  const regex = /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
 
   const handleInputs = (inputValue, inputName) => {
     setData({ ...data, [inputName]: inputValue })
-
     if (inputName === 'demo') {
       if (inputValue === '') {
         setErrorDemo('')
@@ -89,11 +86,8 @@ const CreateProyect = () => {
         handleClickCreateCard={handleClickCreateCard}
         errorMsjBtn={errorMsjBtn}
         url={url}
-      // defaultAvatar={user}
       />
-
     </>
-
   )
 }
 export default CreateProyect

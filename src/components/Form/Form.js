@@ -3,7 +3,7 @@ import Input from "./Input"
 import TextArea from "./TextArea"
 import GetAvatar from '../GetAvatar';
 
-const Form = ({ handleSubmit, data, handleInputs, errorRepo, errorDemo, handleClickCreateCard, errorMsjBtn, url, updateAvatar, updateCover, cover, avatar }) => {
+const Form = ({ handleSubmit, data, handleInputs, errorRepo, errorDemo, handleClickCreateCard, errorMsjBtn, url, updateAvatar, updateCover }) => {
   return (
     <form onSubmit={handleSubmit} className='form'>
       <h2 className='form--title'>Información</h2>
@@ -20,45 +20,38 @@ const Form = ({ handleSubmit, data, handleInputs, errorRepo, errorDemo, handleCl
           placeholder={'Nombre del proyecto'}
           nameId={'name'}
           value={data.name}
-          handleInputs={handleInputs}
-        />
+          handleInputs={handleInputs} />
 
         <Input
           maxLenght={'30'}
           placeholder={'Slogan'}
           nameId={'slogan'}
           value={data.slogan}
-          handleInputs={handleInputs}
-        />
+          handleInputs={handleInputs} />
 
         <Input
           placeholder={'Repo'}
           nameId={'repo'}
           value={data.repo}
-          handleInputs={handleInputs}
-        />
+          handleInputs={handleInputs} />
         <span className='span--error'>{errorRepo}</span>
 
         <Input
           placeholder={'Demo'}
           nameId={'demo'}
           value={data.demo}
-          handleInputs={handleInputs}
-        />
+          handleInputs={handleInputs} />
         <span className='span--error'>{errorDemo}</span>
 
         <Input
           placeholder={'Tecnologías'}
           nameId={'technologies'}
           value={data.technologies}
-          handleInputs={handleInputs}
-        />
+          handleInputs={handleInputs} />
 
         <TextArea
           data={data.desc}
-          handleInputs={handleInputs}
-        />
-
+          handleInputs={handleInputs} />
       </fieldset>
 
       <section className="form-ask-info">
@@ -71,32 +64,30 @@ const Form = ({ handleSubmit, data, handleInputs, errorRepo, errorDemo, handleCl
           placeholder={'Nombre'}
           nameId={'autor'}
           value={data.autor}
-          handleInputs={handleInputs}
-        />
+          handleInputs={handleInputs} />
 
         <Input
           placeholder={'Trabajo'}
           nameId={'job'}
           value={data.job}
-          handleInputs={handleInputs}
-        />
-
+          handleInputs={handleInputs} />
       </fieldset>
 
       <section className="buttons-img1">
-        {/* <button className="btn">Subir foto de proyecto</button> */}
         <GetAvatar
-          avatar={avatar}
-          btnText='get avatar'
+          btnText='Subir foto de la autora'
           updateAvatar={updateAvatar}
           className='btn' />
-        {/* <button className="btn">Subir foto de autora</button> */}
-        <GetAvatar className='btn' avatar={cover} updateAvatar={updateCover} btnText='get cover' />
+
+        <GetAvatar
+          updateAvatar={updateCover}
+          btnText='Subir foto del proyecto'
+          className='btn' />
       </section>
+
       <section className="buttons-img2">
         <Button
-          handleClickCreateCard={handleClickCreateCard}
-        />
+          handleClickCreateCard={handleClickCreateCard} />
       </section>
 
       <section >

@@ -160,6 +160,25 @@
   background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
   border-radius: 40px;
 }
+.get-avatar__upload-field {
+  display: none;
+}
+
+.get-avatar__label {
+  font-family:"Roboto",
+    sans-serif; 
+    font-size: 13px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0 5px;
+  border: solid 2px white;
+  
+}
 
 .btn-large {
   width: 200px;
