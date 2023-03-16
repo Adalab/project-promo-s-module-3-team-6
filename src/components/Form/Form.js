@@ -1,8 +1,9 @@
 import Button from "./Button"
 import Input from "./Input"
 import TextArea from "./TextArea"
+import GetAvatar from '../GetAvatar';
 
-const Form = ({ handleSubmit, data, handleInputs, errorRepo, errorDemo, handleClickCreateCard, errorMsjBtn, url }) => {
+const Form = ({ handleSubmit, data, handleInputs, errorRepo, errorDemo, handleClickCreateCard, errorMsjBtn, url, updateAvatar, updateCover, cover, avatar }) => {
   return (
     <form onSubmit={handleSubmit} className='form'>
       <h2 className='form--title'>Información</h2>
@@ -54,7 +55,7 @@ const Form = ({ handleSubmit, data, handleInputs, errorRepo, errorDemo, handleCl
         />
 
         <TextArea
-          data={data}
+          data={data.desc}
           handleInputs={handleInputs}
         />
 
@@ -83,8 +84,14 @@ const Form = ({ handleSubmit, data, handleInputs, errorRepo, errorDemo, handleCl
       </fieldset>
 
       <section className="buttons-img1">
-        <button className="btn">Subir foto de proyecto</button>
-        <button className="btn">Subir foto de autora</button>
+        {/* <button className="btn">Subir foto de proyecto</button> */}
+        <GetAvatar
+          avatar={avatar}
+          btnText='get avatar'
+          updateAvatar={updateAvatar}
+          className='btn' />
+        {/* <button className="btn">Subir foto de autora</button> */}
+        <GetAvatar className='btn' avatar={cover} updateAvatar={updateCover} btnText='get cover' />
       </section>
       <section className="buttons-img2">
         <Button

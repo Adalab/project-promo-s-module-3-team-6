@@ -1,8 +1,15 @@
 
-const Preview = ({ cover, data, avatar }) => {
+import Profile from './Profile';
+import cover from '../images/cover.jpeg';
+import user from '../images/user.png';
+
+const Preview = ({ data }) => {
+
   return (
     <section className='preview'>
-      <img className='preview--image' src={cover} alt='' />
+      {/* <img className='preview--image' src={cover} alt='' /> */}
+      <Profile className='preview--image' defaultAvatar={cover} avatar={data.image} />
+
 
       <section className='preview--autor'>
         <section className='info--project'>
@@ -36,7 +43,11 @@ const Preview = ({ cover, data, avatar }) => {
         </section>
 
         <section className='info--autor'>
-          <img className='info--autor__image' src={avatar} alt='' />
+
+          {/* <img className='info--autor__image' style={{ backgroundImage: `url(${avatar})` }} alt='' /> */}
+
+          <Profile className='info--autor__image' defaultAvatar={user} avatar={data.photo} />
+
           <p className='info--autor__job'>
             {data.job || 'Full Stack Developer'}
           </p>

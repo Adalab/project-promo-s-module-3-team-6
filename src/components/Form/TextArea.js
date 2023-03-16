@@ -1,4 +1,7 @@
 const TextArea = ({ data, handleInputs }) => {
+  const handleChangeInputs = (ev) => {
+    handleInputs(ev.target.value, ev.target.name)
+  }
   return (
     <textarea
       required
@@ -8,8 +11,8 @@ const TextArea = ({ data, handleInputs }) => {
       placeholder="Descripción"
       name="desc"
       id="desc"
-      value={data.desc}
-      onChange={handleInputs}
+      value={data}
+      onChange={handleChangeInputs}
     ></textarea>
   )
 }
