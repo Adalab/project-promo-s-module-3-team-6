@@ -3,6 +3,7 @@ import dataApi from '../services/api';
 import Preview from './Preview';
 import Form from './Form/Form';
 import ls from '../services/localStorage'
+import { NavLink } from 'react-router-dom';
 
 const CreateProyect = () => {
 
@@ -43,6 +44,8 @@ const CreateProyect = () => {
         setErrorDemo('')
       } else if (!regex.test(inputValue)) {
         setErrorDemo('*Introduce un enlace válido, Ej: https://...')
+      } else {
+        setErrorDemo('')
       }
     }
     if (inputName === 'repo') {
@@ -50,6 +53,8 @@ const CreateProyect = () => {
         setErrorRepo('')
       } else if (!regex.test(inputValue)) {
         setErrorRepo('*Introduce un enlace válido, Ej: https://...')
+      } else {
+        setErrorRepo('')
       }
     }
     ls.set('card', data)
@@ -58,15 +63,20 @@ const CreateProyect = () => {
   const handleClickCreateCard = () => {
     console.log('holi')
     dataApi(data)
-      .then((data) => {
-        if (!data.success) {
+      .then((info) => {
+        if (!info.success) {
           setErrorMsjBtn("*Debes completar todos los campos");
         } else {
           setErrorMsjBtn("La tarjeta ha sido creada:")
-          setUrl(data.cardURL)
+          setUrl(info.cardURL);
+
+          const storedCardList = ls.get('cardList', []);
+          storedCardList.push(data);
+          ls.set('cardList', storedCardList);
+
+
         }
       })
-    ls.set('card', data)
   }
 
   const handleSubmit = (ev) => {
@@ -75,6 +85,8 @@ const CreateProyect = () => {
 
   return (
     <>
+      <NavLink to='/'>Ver proyectos</NavLink>
+
       <Preview data={data} />
       <Form
         updateAvatar={updateAvatar}

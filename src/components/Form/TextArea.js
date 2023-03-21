@@ -4,7 +4,6 @@ const TextArea = ({ data, handleInputs }) => {
   }
   return (
     <textarea
-      required
       maxLength='200'
       className="form--project__textarea"
       type="text"
