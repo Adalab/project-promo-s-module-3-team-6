@@ -7,6 +7,12 @@ import Profile from './Profile';
 
 
 const Landing = () => {
+
+  const handleClickDeleteCard = (ev) => {
+    ev.preventDefault()
+  }
+
+
   const cardLanding = ls.get('cardList', [])
   const renderCardLanding = () => {
     return cardLanding.map((eachCard, i) => {
@@ -39,6 +45,7 @@ const Landing = () => {
               <p className='info--autor__name'>{eachCard.autor}</p>
             </section>
           </section>
+          <i onClick={handleClickDeleteCard} class=" btn--delete__landing fa-solid fa-trash-can"></i>
         </li>
       )
     })
