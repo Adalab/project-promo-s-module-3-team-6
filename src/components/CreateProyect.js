@@ -102,7 +102,7 @@ const CreateProyect = () => {
   }
 
   return (
-    <>
+    <main className='main'>
       <NavLink className='btn--project' to='/'><i class="detail__link fa-sharp fa-solid fa-arrow-left"></i>Ver proyectos</NavLink>
 
       <Preview data={data} />
@@ -119,7 +119,7 @@ const CreateProyect = () => {
         url={url}
         handleClickReset={handleClickReset}
       />
-    </>
+    </main>
   )
 }
 export default CreateProyect

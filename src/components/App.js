@@ -12,13 +12,13 @@ function App() {
   return (
     <div className='container'>
       <Header icon1={icon1} adalab={adalab} />
-      <main className='main'>
-        <Routes>
-          <Route path='/' element={<Landing></Landing>}></Route>
-          <Route path='/create' element={<CreateProyect></CreateProyect>}></Route>
-          <Route path='*' element={<ErrorMsn></ErrorMsn>} ></Route>
-        </Routes>
-      </main>
+
+      <Routes>
+        <Route path='/' element={<Landing></Landing>}></Route>
+        <Route path='/create' element={<CreateProyect></CreateProyect>}></Route>
+        <Route path='*' element={<ErrorMsn></ErrorMsn>} ></Route>
+      </Routes>
+
     </div>
 
   );
