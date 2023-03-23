@@ -160,6 +160,33 @@
   background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
   border-radius: 40px;
 }
+
+.btn--project {
+ 
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+    border: none;
+    padding: 0 5px;
+    height: 43px;
+   
+    border-radius: 40px;
+    text-decoration: none;
+    padding-top: 10px;
+    @include tablet {
+      margin-top: 15px;
+      position: absolute;
+      margin-left: 20px;
+      background-color: $colorDarkPurple;
+      color: white;
+      padding: 10px;
+    }
+
+}
+.detail__link {
+  margin-right: 10px;
+}
+
 .get-avatar__upload-field {
   display: none;
 }
@@ -199,10 +226,8 @@
  margin-left: 15px;
  font-family:$fontFamily;
 }
-/*  .info--project__technologies {
-    background-color: lightgray;
-    border-radius: 20px;
-    font-size: 14px;
-    padding: 10px;
-    width: 70%;
-  } */
+.btn--reset {
+  color: white;
+  font-size: 20px;
+  margin-top: 15px;
+}

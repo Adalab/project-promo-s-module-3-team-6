@@ -2,8 +2,9 @@ import Button from "./Button"
 import Input from "./Input"
 import TextArea from "./TextArea"
 import GetAvatar from '../GetAvatar';
+import ButtonReset from './ButtonReset'
 
-const Form = ({ handleSubmit, data, handleInputs, errorRepo, errorDemo, handleClickCreateCard, errorMsjBtn, url, updateAvatar, updateCover }) => {
+const Form = ({ handleSubmit, data, handleInputs, errorRepo, errorDemo, handleClickCreateCard, errorMsjBtn, url, updateAvatar, updateCover, handleClickReset }) => {
   return (
     <form onSubmit={handleSubmit} className='form'>
       <h2 className='form--title'>Información</h2>
@@ -94,6 +95,8 @@ const Form = ({ handleSubmit, data, handleInputs, errorRepo, errorDemo, handleCl
         <p className="card"> {errorMsjBtn} </p>
         <a className="error--msj" href={url} target="_blank" rel="noreferrer"> {url}</a>
       </section>
+      <ButtonReset handleClickReset={handleClickReset} />
+
     </form>
   )
 }

@@ -3,12 +3,16 @@
 @import "header.scss";
 @import "preview.scss";
 @import "form.scss";
+@import 'landing.scss';
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: $fontFamily;
+}
+body {
+  background-color: #302c42;
 }
 .container {
   background-color: #302c42;

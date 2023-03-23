@@ -5,13 +5,14 @@ import user from '../images/user.png';
 import Profile from './Profile';
 
 
+
 const Landing = () => {
   const cardLanding = ls.get('cardList', [])
   const renderCardLanding = () => {
     return cardLanding.map((eachCard, i) => {
       return (
-        <li key={i}>
-          <section className='preview--autor'>
+        <li className="li--items" key={i}>
+          <section className='landing--autor'>
             <section className='info--project'>
               <div className='wrap--title__preview'>
                 <div className='info--project__line1'></div>
@@ -45,13 +46,13 @@ const Landing = () => {
   return (
     <div className='container'>
       <main>
-        <section>
-          <h1>Proyectos molones</h1>
-          <p>Escaparate en línea para recoger ideas a través de la tecnología</p>
-          <Link to="/create">Nuevo proyecto</Link>
+        <section className="wrap--landing">
+          <h1 className="landing--title">Proyectos molones</h1>
+          <p className="landing--text">Escaparate en línea para recoger ideas a través de la tecnología</p>
+          <Link className="landing--link btn-large" to="/create">Nuevo proyecto</Link>
         </section>
         <section>
-          <ul>{renderCardLanding()}</ul>
+          <ul className="list--element">{renderCardLanding()}</ul>
         </section>
       </main >
     </div>

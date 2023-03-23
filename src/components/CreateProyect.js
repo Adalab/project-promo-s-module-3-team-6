@@ -83,9 +83,27 @@ const CreateProyect = () => {
     ev.preventDefault();
   }
 
+  const handleClickReset = () => {
+    setData({
+      name: '',
+      slogan: '',
+      technologies: '',
+      repo: '',
+      demo: '',
+      desc: '',
+      autor: '',
+      job: '',
+      photo: '',
+      image: '',
+    })
+    setErrorMsjBtn('')
+    setUrl('')
+    ls.remove('card')
+  }
+
   return (
     <>
-      <NavLink to='/'>Ver proyectos</NavLink>
+      <NavLink className='btn--project' to='/'><i class="detail__link fa-sharp fa-solid fa-arrow-left"></i>Ver proyectos</NavLink>
 
       <Preview data={data} />
       <Form
@@ -99,6 +117,7 @@ const CreateProyect = () => {
         handleClickCreateCard={handleClickCreateCard}
         errorMsjBtn={errorMsjBtn}
         url={url}
+        handleClickReset={handleClickReset}
       />
     </>
   )
